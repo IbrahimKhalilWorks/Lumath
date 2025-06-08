@@ -63,9 +63,9 @@ body {
 }
 
 .orb-logo {
-     width: 130px;
-    height: auto;
-    max-width: 160px;  
+  width: 130px;
+  height: auto;
+  max-width: 160px;
 }
 
 .logo-text {
@@ -206,7 +206,7 @@ body {
 }
 
 .section-title {
-  font-size: 4rem;
+  font-size: 54px;
   font-weight: 800;
   text-align: left;
   margin-bottom: 80px;
@@ -230,7 +230,7 @@ body {
 }
 
 .why-matters-left h2 {
-  font-size: 4rem;
+  font-size: 54px;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
@@ -426,7 +426,7 @@ body {
 }
 
 .compatibility-right h2 {
-  font-size: 4rem;
+  font-size: 54px;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
@@ -469,8 +469,7 @@ body {
 
 /* LuMATH Ventures Section */
 .ventures {
-  background: url("bg-last.jpg")
-    center / cover;
+  background: url("bg-last.jpg") center / cover;
   color: var(--white);
   padding: 120px 0;
   text-align: center;
@@ -496,7 +495,7 @@ body {
 }
 
 .ventures-title {
-  font-size: 4rem;
+  font-size: 54px;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
