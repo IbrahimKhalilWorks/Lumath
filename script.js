@@ -1,30 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger menu functionality
-  const hamburger = document.getElementById("hamburger")
-  const mobileNavOverlay = document.getElementById("mobileNavOverlay")
-  const closeBtn = document.getElementById("closeBtn")
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active")
-    mobileNavOverlay.classList.toggle("active")
-    document.body.style.overflow = mobileNavOverlay.classList.contains("active") ? "hidden" : "auto"
-  })
-
-  closeBtn.addEventListener("click", () => {
-    hamburger.classList.remove("active")
-    mobileNavOverlay.classList.remove("active")
-    document.body.style.overflow = "auto"
-  })
-
-  // Close mobile nav when clicking on a link
-  document.querySelectorAll(".mobile-nav-links a, .mobile-social-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active")
-      mobileNavOverlay.classList.remove("active")
-      document.body.style.overflow = "auto"
-    })
-  })
-
   // Initialize Particles.js for header (NASA style - dots only)
   window.particlesJS("particles-js", {
     particles: {
@@ -112,110 +86,92 @@ document.addEventListener("DOMContentLoaded", () => {
     retina_detect: true,
   })
 
-  // Initialize Particles.js for other sections
-  const particleConfigs = ["particles-js-2", "particles-js-3", "particles-js-4"]
-
-  particleConfigs.forEach((id) => {
-    window.particlesJS(id, {
-      particles: {
-        number: {
-          value: 60,
-          density: {
-            enable: true,
-            value_area: 800,
-          },
-        },
-        color: {
-          value: "#305B89",
-        },
-        shape: {
-          type: "circle",
-          stroke: {
-            width: 0,
-            color: "#000000",
-          },
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false,
-          },
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false,
-          },
-        },
-        line_linked: {
-          enable: false, // NASA style - no connecting lines
-        },
-        move: {
+  // Initialize Particles.js for Core Applications section
+  window.particlesJS("particles-js-3", {
+    particles: {
+      number: {
+        value: 60,
+        density: {
           enable: true,
-          speed: 1.5,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200,
-          },
+          value_area: 800,
         },
       },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "bubble",
-          },
-          onclick: {
-            enable: true,
-            mode: "push",
-          },
-          resize: true,
-        },
-        modes: {
-          bubble: {
-            distance: 200,
-            size: 6,
-            duration: 2,
-            opacity: 0.8,
-            speed: 3,
-          },
-          push: {
-            particles_nb: 4,
-          },
+      color: {
+        value: "#305B89",
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000",
         },
       },
-      retina_detect: true,
-    })
+      opacity: {
+        value: 0.5,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: false,
+        },
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 40,
+          size_min: 0.1,
+          sync: false,
+        },
+      },
+      line_linked: {
+        enable: false, // NASA style - no connecting lines
+      },
+      move: {
+        enable: true,
+        speed: 1.5,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "bubble",
+        },
+        onclick: {
+          enable: true,
+          mode: "push",
+        },
+        resize: true,
+      },
+      modes: {
+        bubble: {
+          distance: 200,
+          size: 6,
+          duration: 2,
+          opacity: 0.8,
+          speed: 3,
+        },
+        push: {
+          particles_nb: 4,
+        },
+      },
+    },
+    retina_detect: true,
   })
-
-  // Perfect infinite slider
-  function createInfiniteSlider() {
-    const sliderTrack = document.getElementById("sliderTrack")
-    const sliderItems = Array.from(sliderTrack.children)
-
-    // Clone all items to create seamless loop
-    sliderItems.forEach((item) => {
-      const clone = item.cloneNode(true)
-      sliderTrack.appendChild(clone)
-    })
-  }
-
-  createInfiniteSlider()
 
   // Smooth scroll for scroll indicator
   const scrollIndicator = document.querySelector(".scroll-indicator")
@@ -248,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add fade-in class to elements and observe them
   const elementsToAnimate = document.querySelectorAll(
-    ".section-content, .application-item, .capability-item, .ventures-content, .we-are-content",
+    ".section-content, .application-item, .why-matters-content, .compatibility-content, .ventures-content",
   )
   elementsToAnimate.forEach((el) => {
     el.classList.add("fade-in")
@@ -256,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Button hover effects
-  const buttons = document.querySelectorAll(".btn-primary, .btn-secondary, .footer-btn")
+  const buttons = document.querySelectorAll(".see-all-btn, .ventures-btn")
   buttons.forEach((button) => {
     button.addEventListener("mouseenter", function () {
       this.style.transform = "translateY(-2px)"
