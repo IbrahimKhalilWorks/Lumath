@@ -359,7 +359,7 @@ body {
   border-radius: 16px;
 }
 
-.application-item { 
+.application-item {
   border-radius: 16px;
   padding: 30px;
   display: flex;
@@ -668,8 +668,7 @@ body {
     font-size: 3rem;
   }
 
-  .dashboard-image,
-  .compatibility-image {
+  .dashboard-image {
     margin-top: 40px;
   }
 
