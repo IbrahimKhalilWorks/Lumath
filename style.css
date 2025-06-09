@@ -305,7 +305,7 @@ body {
 .core-applications-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline; /* Change from center to baseline for proper alignment */
+  align-items: center; 
   margin-bottom: 60px;
 }
 
