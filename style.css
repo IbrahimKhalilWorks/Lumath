@@ -39,6 +39,16 @@ body {
   z-index: 10;
 }
 
+/* Combined Header and Why It Matters Section */
+.header-why-matters-combined {
+  position: relative;
+  min-height: 100vh;
+  background: var(--lumath-deep-dark);
+  color: var(--white);
+  overflow: hidden;
+  padding: 0 0 120px 0; /* Add bottom padding to match other sections */
+}
+
 /* Header */
 .header {
   position: relative;
@@ -63,7 +73,7 @@ body {
 }
 
 .orb-logo {
-  width: 130px;
+  width: 80px;
   height: auto;
   max-width: 160px;
 }
@@ -128,7 +138,7 @@ body {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 16vh;
+  padding-top: 20vh;
   position: relative;
   z-index: 10;
 }
@@ -195,7 +205,7 @@ body {
 
 /* Sections */
 .section {
-  padding: 120px 0;
+  padding: 120px 0; /* Consistent padding for all sections */
   position: relative;
   overflow: hidden;
 }
@@ -206,7 +216,7 @@ body {
 }
 
 .section-title {
-  font-size: 54px;
+  font-size: 4rem;
   font-weight: 800;
   text-align: left;
   margin-bottom: 80px;
@@ -218,6 +228,7 @@ body {
   background: var(--lumath-deep-dark);
   color: var(--white);
   position: relative;
+  padding-top: 0;
 }
 
 .why-matters-content {
@@ -227,10 +238,11 @@ body {
   align-items: center;
   position: relative;
   z-index: 10;
+  padding-top: 120px; /* Add top padding to separate from hero content */
 }
 
 .why-matters-left h2 {
-  font-size: 54px;
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
@@ -282,7 +294,7 @@ body {
   max-width: 500px;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 20px 25px rgba(48, 91, 137, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Core Applications */
@@ -294,8 +306,12 @@ body {
 .core-applications-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline; /* Change from center to baseline for proper alignment */
   margin-bottom: 60px;
+}
+
+.core-applications-header .section-title {
+  margin-bottom: 0; /* Remove bottom margin to align with button */
 }
 
 .see-all-btn {
@@ -325,7 +341,7 @@ body {
 }
 
 .application-item {
-  border-radius: 16px;
+   border-radius: 16px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -422,11 +438,11 @@ body {
   max-width: 500px;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 20px 25px rgba(48, 91, 137, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .compatibility-right h2 {
-  font-size: 54px;
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
@@ -469,7 +485,8 @@ body {
 
 /* LuMATH Ventures Section */
 .ventures {
-  background: url("bg-last.jpg") center / cover;
+  background: url("bg-last.jpg")
+    center / cover;
   color: var(--white);
   padding: 120px 0;
   text-align: center;
@@ -495,7 +512,7 @@ body {
 }
 
 .ventures-title {
-  font-size: 54px;
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 30px;
   letter-spacing: -0.02em;
