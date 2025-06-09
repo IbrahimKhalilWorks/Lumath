@@ -295,22 +295,23 @@ body {
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
-
 /* Core Applications */
 .core-applications {
   background: var(--lumath-deep-dark);
   color: var(--white);
+  padding: 120px 0;
+  position: relative;
 }
 
 .core-applications-header {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   margin-bottom: 60px;
 }
 
 .core-applications-header .section-title {
-  margin-bottom: 0; /* Remove bottom margin to align with button */
+  margin-bottom: 0;
 }
 
 .see-all-btn {
@@ -330,6 +331,16 @@ body {
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
 }
 
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
 .applications-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -341,17 +352,19 @@ body {
 
 .brain-img {
   height: auto;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin-top: 30px;
   border: 1px solid var(--lumath-dark);
   border-radius: 16px;
 }
 
-.application-item {
+.application-item { 
   border-radius: 16px;
   padding: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(48, 91, 137, 0.2);
   position: relative;
@@ -418,6 +431,44 @@ body {
   border-radius: 12px;
 }
 
+/* Responsive Design for Core Applications */
+@media (max-width: 992px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .core-applications-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .applications-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .application-item {
+    min-height: 200px; /* Set consistent minimum height */
+  }
+
+  .application-item.large {
+    grid-row: span 1;
+    min-height: auto; /* Allow large item to be taller due to image */
+  }
+
+  .brain-img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 /* Built for Compatibility */
 .compatibility {
   background: var(--lumath-deep-dark);
