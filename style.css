@@ -240,6 +240,137 @@ body {
   padding-top: 120px; /* Add top padding to separate from hero content */
 }
 
+/* Icon Animation Styles - ADD THIS TO YOUR style.css */
+
+/* Override body styles when icon is showing */
+body {
+  overflow: hidden;
+}
+
+body.website-active {
+  overflow: auto;
+}
+
+#icon-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+  border-radius: 70%;
+  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.5), rgba(0, 0, 255, 0.1));
+  animation: containerPulse 5s ease-in-out infinite;
+  z-index: 9999;
+}
+
+@keyframes containerPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(138, 43, 226, 0.5); }
+  50% { box-shadow: 0 0 60px rgba(0, 191, 255, 0.7); }
+}
+
+#icon-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 1.2s ease, transform 0.3s ease;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px 10px rgba(255, 215, 100, 0.5);
+}
+
+.pulse-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(160, 100, 255, 0.3), transparent 80%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 50px 20px rgba(160, 100, 255, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.safari-blur {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  left: -80px;
+  border-radius: 50%;
+  background: rgba(120, 180, 255, 0.2);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  pointer-events: none;
+  z-index: -2;
+  transition: transform 0.3s ease, background 0.4s ease;
+  animation: blurPulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes blurPulse {
+  0%, 100% { background: rgba(0, 140, 255, 0.2); }
+  50% { background: rgba(120, 200, 255, 0.35); }
+}
+
+#icon {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.click-glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: -10px;
+  left: -10px;
+  border-radius: 40%;
+  background: radial-gradient(circle, rgba(0, 170, 255, 0.7), transparent 90%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.8s ease-out, transform 1s ease;
+}
+
+#ripple {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 170, 255, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 1s ease-out;
+  z-index: 0;
+}
+
+/* Website Content initial state */
+#website-content {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  animation: fadein 1.5s ease forwards;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .why-matters-left h2 {
   font-size: 3rem;
   font-weight: 800;
